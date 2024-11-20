@@ -1,0 +1,14 @@
+{% include '/scripts.html'  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar perros</title>  
+</head>
+<body>
+    <h1>Cantidad de perros llamados "Lassie"</h1>
+    <p>Hay {{ cantidad_perros }} perros llamados Lassie</p>
+    <a class="btn btn-success" href="{{ url_for('index') }}">Regresar al inicio</a
+</body>
+</html>

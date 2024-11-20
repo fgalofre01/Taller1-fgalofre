@@ -1,0 +1,24 @@
+{% include '/scripts.html'  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perros Asignados a {{ nombre_cuidador }}</title>
+</head>
+<body>
+    <h1>Perros Asignados a {{ nombre_cuidador }}</h1>
+
+    {% if perros %}
+        <ul>
+            {% for perro in perros %}
+                <li>{{ perro.nombre }} - Peso: {{ perro.peso }} kg</li>
+            {% endfor %}
+        </ul>
+        <p>Se han asignado {{ perros|length }} perros a {{ nombre_cuidador }}.</p>
+    {% else %}
+        <p>No hay perros con menos de 3 kg para asignar a {{ nombre_cuidador }}.</p>
+    {% endif %}
+
+    <a class="btn btn-success" href="{{ url_for('index') }}">Regresar al inicio</a>
+</body>
+</html>
