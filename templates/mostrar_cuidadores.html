@@ -1,0 +1,37 @@
+{% include '/scripts.html'  %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Listado de cuidadores
+      </title> 
+</head>
+<main class="main text-center py-4"> 
+<body>
+    <h1 class="text-center text-warning">Listado de cuidadores</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cuidador in cuidadores %}
+            <tr>
+                <td>{{ cuidador.id }}</td>
+                <td>{{ cuidador.nombre }}</td>
+                <td>{{ cuidador.telefono }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a class="btn btn-success" href="{{ url_for('admin_dashboard') }}">Regresar al panel</a>
+</body>
+</main>
+</html>

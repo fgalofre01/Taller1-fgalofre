@@ -1,0 +1,41 @@
+{% include '/scripts.html'  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guarderia</title>
+</head>
+<main class="main text-center py-4"> 
+<body>
+    <br>
+    <div class="row justify-content-center" style="width: 40rem; margin-left: 15rem;" >
+        <div class="col-12">
+          <!-- Mostrar mensajes flash -->
+          {% with messages=get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <!-- Usamos las clases de Bootstrap para las alertas -->
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </div>
+      </div>
+    <h1>Bienvenido {{ name }}</h1>
+</br></br>
+<a class="btn btn-success" href="{{ url_for('mostrar_cuidadores') }}">Mostrar Cuidadores</a>
+</br></br>
+<a class="btn btn-primary" href="{{ url_for('mostrar_perritos') }}">Mostrar Perros</a>
+</br></br>
+<a class="btn btn-warning" href="{{ url_for('contar_perros') }}">Perros llamados "Lassie"</a>  
+</br></br>
+<a class="btn btn-info" href="{{ url_for('asignar_perros_a_mario') }}">Asignar perros a "Mario"</a> 
+</br></br>
+<a class="btn btn-danger" href="{{ url_for('logout') }}">Cerrar Sesión</a>
+</body>
+</main>
+</html>

@@ -1,0 +1,43 @@
+{% include '/scripts.html'  %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Listado de perritos
+      </title> 
+</head>
+<main class="main text-center py-4"> 
+<body>
+    <h1 class="text-center text-warning">Listado de perritos</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Edad</th>
+                <th>Peso</th>
+                <th>ID Cuidador</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for perro in perritos %}
+            <tr>
+                <td>{{ perro.id }}</td>
+                <td>{{ perro.nombre }}</td>
+                <td>{{ perro.raza }}</td>
+                <td>{{ perro.edad }}</td>
+                <td>{{ perro.peso }}</td>
+                <td>{{ perro.id_cuidador }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a class="btn btn-success" href="{{ url_for('admin_dashboard') }}">Regresar al panel</a>
+</body>
+</main>
+</html>

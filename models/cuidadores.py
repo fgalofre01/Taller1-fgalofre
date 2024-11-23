@@ -9,7 +9,7 @@ class Cuidador(db.Model):
      perros = db.relationship('Perros', backref='cuidador', lazy=True)
     
     
-     def __init__(self, nombre, telefono):
+     def __init__(self, nombre: str, telefono: str) -> None :
         self.nombre = nombre
         self.telefono = telefono
     

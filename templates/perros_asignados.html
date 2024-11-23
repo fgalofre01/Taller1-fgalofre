@@ -3,11 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perros Asignados a {{ nombre_cuidador }}</title>
 </head>
+<main style="margin-left: 30rem;"> 
 <body>
+    
     <h1>Perros Asignados a {{ nombre_cuidador }}</h1>
-
+    <div style="margin-left: 8rem;">
     {% if perros %}
         <ul>
             {% for perro in perros %}
@@ -19,6 +22,8 @@
         <p>No hay perros con menos de 3 kg para asignar a {{ nombre_cuidador }}.</p>
     {% endif %}
 
-    <a class="btn btn-success" href="{{ url_for('index') }}">Regresar al inicio</a>
+    <a class="btn btn-success" href="{{ url_for('admin_dashboard') }}">Regresar al panel</a>
+</div>
 </body>
+</main>
 </html>
